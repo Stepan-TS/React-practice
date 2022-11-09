@@ -1,0 +1,62 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+.jobList{
+   background-color: gray;
+   min-height: 100vh;
+   padding-top: 30px;
+   
+    .jobValue{
+        margin:auto;
+        background-color:gray;
+        width:80%;
+        background-color: white;
+        border-style: solid;
+        border-width: medium;
+        border-color:black;
+        display: flex;
+    
+        .image{
+            flex:1;
+            border-style: solid;
+            border-width:small;
+            border-color:black;
+            display: flex;
+            justify-content: center;
+
+            img{
+                width: 85px;
+                height: 85px;
+            }
+        }   
+        .mainText{
+            flex:6;
+            border-style: solid;
+            border-width:small;
+            border-color:black;
+            display:flex;
+            flex-direction: column;
+
+            .title{
+                flex:2;
+                padding-top: 15px;
+            }
+            .name{
+                flex:2;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            .location{
+                flex:1;
+                padding-bottom: 15px;
+            }
+        }
+        .dataText{
+            flex:2;
+            display: flex;
+            justify-content: center;
+            align-items:flex-end;
+        }   
+    }
+}
