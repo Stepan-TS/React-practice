@@ -1,11 +1,12 @@
 import React from 'react';
-import './App.css';
-import JobList from './components/JobList';
+import JobDetailed from './pages/JobDetailed/jobDetailed';
+import JobList from './pages/JobList/jobList';
 
 function App() {
   return (
     <div className="App">
-      <JobList />
+      <JobDetailed />
+
     </div>
   );
 }

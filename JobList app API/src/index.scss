@@ -1,62 +1,315 @@
 *{
     box-sizing: border-box;
     margin: 0;
+    margin-left: 0;
+}
+
+@mixin mobile {
+    @media screen and (max-width:480px){
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width:1500px){
+        @content;
+    }
 }
 .jobList{
-   background-color: gray;
+   background-color: #E6E9F2;
    min-height: 100vh;
-   padding-top: 30px;
+   padding:10px 5px 10px 5px;
    
     .jobValue{
         margin:auto;
-        background-color:gray;
         width:80%;
         background-color: white;
-        border-style: solid;
-        border-width: medium;
-        border-color:black;
         display: flex;
-    
-        .image{
-            flex:1;
-            border-style: solid;
-            border-width:small;
-            border-color:black;
+        padding:10px 5px 10px 10px;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        @include mobile{
+            background-color:#EFF0F5;
+        }
+
+        .mainBox{
             display: flex;
-            justify-content: center;
-
-            img{
-                width: 85px;
-                height: 85px;
-            }
-        }   
-        .mainText{
-            flex:6;
-            border-style: solid;
-            border-width:small;
-            border-color:black;
-            display:flex;
-            flex-direction: column;
-
-            .title{
-                flex:2;
-                padding-top: 15px;
-            }
-            .name{
-                flex:2;
-                padding-top: 10px;
-                padding-bottom: 10px;
-            }
-            .location{
+            width: 100%;
+            padding-top: 20px;
+            
+            .image{
                 flex:1;
-                padding-bottom: 15px;
+                padding-bottom: 10px;
+               
+                img{
+                    width: 65px;
+                    height: 65px;
+                    border-radius:80%;
+                    @include mobile{
+                        width: 45px;
+                        height: 45px;
+                    }
+                }
+            }
+            .mainText{
+                flex:10;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding-left: 10px;
+                cursor: pointer;
+               
+                .title{
+                    color:rgb(23, 11, 75);
+                    font-size: large;
+                    font-family:Arial, Helvetica, sans-serif;
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 14px;
+                    line-height: 20px;
+                    width: 85%;
+                    @include mobile{
+                        max-width: 170px;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+                .name{
+                    color:gray;
+                    font-family: Arial, Helvetica, sans-serif;;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 25px;
+                }
+                .location{
+                    display: flex;
+                }
+
+                .icon{
+                    margin-top: 2px;
+                }
+                
+                .locationText{
+                    color:gray;
+                    font-family: Arial, Helvetica, sans-serif;;
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 12px;
+                    line-height: 25px;
+                    display: flex;
+                }
+            }
+            .ratingBox{
+                flex:2;
+                display: flex;
+                align-items: center;
+                @include mobile{
+                    position: relative;
+                    bottom:235px;
+                    right:173px;
+                }
+                
+            }
+            .dateBox{
+                flex:2;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                @include mobile{
+                    position: relative;
+                    bottom:235px;
+                    right: 130px;
+                    
+                }
+                p{
+                    color:gray;
+                    font-family: Arial, Helvetica, sans-serif;;
+                    font-style:normal;
+                    font-weight: 400;
+                    font-size: 13px;
+                    line-height: 25px;
+                    @include mobile{
+                        font-size: 10px;
+                        font-family: Arial, Helvetica, sans-serif;;
+                    }
+                }
             }
         }
-        .dataText{
-            flex:2;
-            display: flex;
-            justify-content: center;
-            align-items:flex-end;
-        }   
     }
+}
+
+.jobDetailed{
+    .jobDetailedValue{
+        .header{
+            display: flex;
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 30px;
+            .text{
+               width: 750px;
+               
+            }
+            .upper{
+                display: flex;
+                .jobDetails{
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 25px;
+                    line-height: 23px;
+                    color:rgb(23, 11, 75);
+                }
+                .save{
+                    padding-left: 410px;
+                }
+                .share{
+                    padding-left: 33px;
+                }
+            }
+            button{
+                margin-top: 20px;
+            }
+            .titleBox{
+                display: flex;
+                margin-top: 20px;
+                
+                .mainText{
+                    width: 65%;
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color:rgb(23, 11, 75);
+                }
+                .price{
+                    padding-left: 113px;
+                    color:rgb(23, 11, 75);
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+            }
+            .date{
+                margin-top: 5px;
+                color:grey;
+                font-family: 'Roboto';
+            }
+            .content{
+                margin-top: 5px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+        }
+        .map{
+        padding-left: 110px;
+            img{
+                width: 230px;
+                height:280px ;
+            }
+        }
+
+        .main{
+                margin-left: 150px;
+                margin-right: 490px;
+                margin-top: 20px;
+                
+            .respons{
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .description{
+                margin-top: 5px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .benefits{
+                color:rgb(23, 11, 75);
+            }
+            .benefitsList{
+                margin-left: -40px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            button{
+                margin-top: 20px;
+            }
+        }
+        .footer{
+            margin-left: 150px;
+            margin-right: 490px;
+            margin-top:40px;
+            .footerTitle{
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .employ{
+                margin-top:10px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .employValue{
+                display:flex;
+            }
+            .benefits{
+                margin-top:10px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .benefitsValue{
+                display:flex;
+            }
+            .imgTitle{
+                margin-top:10px;
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .images{
+                margin-top:10px;
+                display:flex;
+                padding-right:10px;
+                img{
+                    height:80px;
+                    width:150px;
+                    padding-right:20px;
+                }
+            }
+        }
+    }  
 }
