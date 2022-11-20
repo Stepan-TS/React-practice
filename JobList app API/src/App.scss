@@ -1,0 +1,485 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    margin-left: 0;
+}
+
+@mixin mobile {
+    @media screen and (max-width:480px){
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media screen and (max-width:1500px){
+        @content;
+    }
+}
+#id{
+    margin-top: -100px;
+    white-space: pre-wrap;
+    padding-top: 0px;
+}
+body{
+    background-color: #E6E9F2;
+    min-height: 100vh;
+    padding:10px 5px 10px 5px;
+   .jobValue{
+    margin:auto;
+    width:80%;
+    background-color: white;
+    display: flex;
+    padding:10px 5px 10px 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    @include mobile{
+        background-color:#EFF0F5;
+        width: 100%;
+    }
+
+    .mainBox{
+        display: flex;
+        width: 100%;
+        padding-top: 10px;
+        
+        .image{
+            flex:1;
+            padding-bottom: 10px;
+           
+            img{
+                width: 65px;
+                height: 65px;
+                border-radius:80%;
+                @include mobile{
+                    width: 45px;
+                    height: 45px;
+                }
+            }
+        }
+        .mainText{
+            flex:10;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding-left: 10px;
+            cursor: pointer;
+           
+            .title{
+                color:rgb(23, 11, 75);
+                font-size: large;
+                font-family:Arial, Helvetica, sans-serif;
+                font-style: normal;
+                font-weight: 700;
+                font-size: 14px;
+                line-height: 20px;
+                width: 85%;
+                @include mobile{
+                    max-width: 170px;
+                    white-space: nowrap;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+            }
+            .name{
+                color:gray;
+                font-family: Arial, Helvetica, sans-serif;;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 25px;
+            }
+            .location{
+                display: flex;
+            }
+
+            .icon{
+                margin-top: 2px;
+            }
+            
+            .locationText{
+                color:gray;
+                font-family: Arial, Helvetica, sans-serif;;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 12px;
+                line-height: 25px;
+                display: flex;
+            }
+        }
+        .ratingBox{
+            flex:2;
+            display: flex;
+            align-items: center;
+            @include mobile{
+                position: relative;
+                right: 197px;
+                bottom: 43px;
+            }
+        }   
+        .dateBox{
+            flex:2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+         
+        
+            p{
+                color:gray;
+                font-family: Arial, Helvetica, sans-serif;;
+                font-style:normal;
+                font-weight: 400;
+                font-size: 13px;
+                line-height: 25px;
+                @include mobile{
+                    position: relative;
+                    right: 140px;
+                    bottom: 73px;
+                    font-size: 7px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    text-align: center;
+                    line-height: 8px;
+                }
+            } 
+        }
+    }
+}
+}
+
+body{
+    .jobDetailedValue{
+        .header{
+            display: flex;
+            margin-left: 150px;
+            margin-right: 150px;
+            margin-top: 30px;
+            .text{
+            width: 750px;
+            }
+            .upper{
+                display: flex;
+                .jobDetails{
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 25px;
+                    line-height: 23px;
+                    color:rgb(23, 11, 75);
+                }
+                .save{
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color:rgb(23, 11, 75);
+                }
+                .saveIcon{
+                    padding-left:390px;
+                    padding-top:3px;
+                    padding-right:8px;
+                }
+                .shareIcon{
+                    padding-left:35px;
+                    padding-top:4px;
+                }
+                .share{
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    line-height: 23px;
+                    color:rgb(23, 11, 75);
+                    padding-left: 10px;
+                }
+            }
+            button{
+                margin-top: 20px;
+                background-color:#384564;
+                color:white;
+                border-style:none;
+                border-radius:8px;
+                padding:15px;
+            }
+            .titleBox{
+                display: flex;
+                margin-top: 20px;
+                
+                
+                .mainText{
+                    width: 65%;
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 16px;
+                    color:rgb(23, 11, 75);
+                }
+                .price{
+                    padding-left: 113px;
+                    color:rgb(23, 11, 75);
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 18px;
+                    line-height: 25px;
+                }
+            }
+            .date{
+                margin-top: 5px;
+                color:grey;
+                font-family: 'Roboto';
+            }
+            .content{
+                
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+                border-style: dotted;
+                border-color: red;
+            }
+        }
+        .map{
+            padding-left:50px;
+            .mapText{
+                width:240px;
+                background-color:#2A3047;
+                
+
+                .mapTitle{
+                    padding:10px 30px 0px 30px;
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    font-size: 20px;
+                    line-height: 25px;
+                    color: #E7EAF0;
+                }
+                .mapAddress{
+                    padding:5px 30px 5px 30px;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 14px;
+                    color: #E7EAF0;
+                }
+                .mapContact{
+                    padding:5px 30px 0px 30px;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 14px;
+                    color: #E7EAF0;
+                }
+                .mapContactMail{
+                    padding:5px 30px 5px 30px;
+                    font-family: 'Roboto';
+                    font-style: normal;
+                    font-weight: 400;
+                    font-size: 15px;
+                    line-height: 14px;
+                    color: #E7EAF0;
+                }
+            }
+        }
+
+        .main{
+                margin-left: 150px;
+                margin-right: 490px;
+                margin-top: 20px;
+                
+            .respons{
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 16px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .description{
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .benefits{
+                color:rgb(23, 11, 75);
+            }
+            .benefitsList{
+                margin-left: -40px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            button{
+                margin-top: 20px;
+                background-color:#384564;
+                color:white;
+                border-style:none;
+                border-radius:8px;
+                padding:15px;
+            }
+        }
+        .footer{
+            margin-left: 150px;
+            margin-right: 490px;
+            margin-top:40px;
+            .footerTitle{
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .employ{
+                margin-top:10px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .employValue{
+                display:flex;
+                p{
+                    margin-right:10px;
+                    background-color:#cbd5e1;
+                    color:#384564;
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    width:150px;
+                    font-size:12px;
+                    padding:13px;
+                    border-radius:8px;
+                    border: 1px solid rgba(85, 105, 158, 0.3);  
+                    text-align:center;
+                    
+
+                }
+            }
+            .benefits{
+                margin-top:10px;
+                font-family: 'Arial';
+                font-style: normal;
+                font-weight: 300;
+                font-size: 13px;
+                line-height: 24px;
+                color: #3A4562;
+            }
+            .benefitsValue{
+                display:flex;
+                p{
+                    margin-right:10px;
+                    text-align:center;
+                    color:#988B49;
+                    font-family: 'Proxima Nova';
+                    font-style: normal;
+                    font-weight: 700;
+                    width:150px;
+                    font-size:12px;
+                    padding:13px;
+                    border-radius:8px;
+                    background: rgba(255, 207, 0, 0.15);
+                    border: 1px solid #FFCF00;
+                    border-radius: 8px;
+                }
+            }
+            .imgTitle{
+                margin-top:10px;
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 25px;
+                line-height: 23px;
+                color:rgb(23, 11, 75);
+            }
+            .images{
+                margin-top:10px;
+                display:flex;
+                padding-right:10px;
+                img{
+                    border-radius:10px;
+                    height:100px;
+                    width:180px;
+                    margin-right:10px;
+                } 
+            }
+            button{
+                margin:40px 0 70px -40px;
+                background-color:#cbd5e1;
+                color:#384564;
+                width:150px;
+                font-size:8px;
+                padding:13px;
+                border-radius:8px;
+                border-style:none;
+                
+            }
+        }
+    }  
+}
+
+.paginationBox{
+   display:flex;
+   justify-content:center;
+    .pagination{
+        border-radius:10px;
+        margin:30px 490px 0 490px;
+        background-color:white;
+        list-style-type:none;
+        display:flex;
+        justify-content:center;
+        padding:5px 10px 5px 10px;
+        .numbers{
+            display: flex;
+            margin-right: 30px;
+            margin-left: 30px;
+
+        }
+            .iconLeft{
+                color:#7D859C;
+                padding-top:6px;
+                border-right:solid;
+                border-width:1.3px;
+                border-color:#DEE3EF;
+                padding-right: 15px;
+            }
+            .iconRight{
+                color:#7D859C;
+                padding-top:6px;
+                border-left:solid;
+                border-width:1.3px;
+                border-color:#DEE3EF;
+                padding-left: 15px;
+                
+            }
+        
+        li{ 
+           
+            .page-link{
+                background-color:white;
+                font-family: 'Proxima Nova';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 20.8px;
+                line-height: 25px;
+                color:rgb(23, 11, 75);
+                border:none;
+                
+            }
+        }
+    }
+}

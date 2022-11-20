@@ -1,14 +1,20 @@
-import React from 'react';
-import JobDetailed from './pages/JobDetailed/jobDetailed';
-import JobList from './pages/JobList/jobList';
+import './App.scss';
+import Posts from './components/JobList/JobList';
+import Details from './components/JobDetailed/JobDetailed';
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 
-function App() {
+function App() { 
+ 
   return (
     <div className="App">
-      <JobDetailed />
-
+      <Router>
+        <Routes>
+          <Route  path ="/" element = {<Posts />} />
+          <Route  path ="/details" element = {<Details />} />
+        </Routes>
+      </Router>
     </div>
-  );
+  )
 }
 
 export default App;
